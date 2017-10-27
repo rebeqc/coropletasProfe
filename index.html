@@ -42,10 +42,10 @@
 	                '#2c7bb6' ;
 	         
       }	    
-      function infoRiqueza(feature, layer) {
-	var popupContent = "Riqueza de especies: ";
+      function PoblaciónMasc(feature, layer) {
+	var popupContent = "Población Masculina: ";
 	if (feature.properties && feature.properties.spprichnes) {
-	  popupContent += feature.properties.spprichnes;
+	  popupContent += feature.properties.POB_2000_H;
 	} else {
 	  popupContent += 0; 
 	}
@@ -76,11 +76,11 @@
 	    color: 'white',
 	    dashArray: '3',
 	    fillOpacity: 0.7,		  
-            fillColor: color(feature.properties.spprichnes)
+            fillColor: color(feature.properties.POB_2000_H)
           };
         },
 	      
-	onEachFeature: Población masculina
+	onEachFeature: PoblaciónMasc
       })
       población.addTo(mapa);
 	    
