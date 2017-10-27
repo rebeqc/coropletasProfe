@@ -52,7 +52,23 @@
 	layer.bindPopup(popupContent);
       }	    	    
 	    
-      var riqueza = L.geoJson(riqespecies, {
+      //var riqueza = L.geoJson(riqespecies, {
+       // style: function (feature) {
+	 // return {
+	   // weight: 2,
+	    //opacity: 1,
+	    //color: 'white',
+	    //dashArray: '3',
+	    //fillOpacity: 0.7,		  
+            //fillColor: color(feature.properties.spprichnes)
+          //};
+       // },
+	      
+	//onEachFeature: infoRiqueza
+      //})
+      //riqueza.addTo(mapa);//
+	    
+      var poblacionMasc = L.geoJson(POB_2000_H, {
         style: function (feature) {
 	  return {
 	    weight: 2,
@@ -64,9 +80,10 @@
           };
         },
 	      
-	onEachFeature: infoRiqueza
+	onEachFeature: Población masculina
       })
-      riqueza.addTo(mapa);
+      población.addTo(mapa);
+	    
 	    
 	    
       function infoPresencia(feature, layer) {
