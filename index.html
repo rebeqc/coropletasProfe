@@ -33,9 +33,10 @@
 	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>';    
         id: 'mapbox.satellite'
         accessToken: 'pk.eyJ1IjoicmViZXFjIiwiYSI6ImNqODU2cjFvYjBpeWEycXBsOTA5NHc5YTcifQ.pKX-nNw4MnZZ-iXr5rS2dg'
+			   
+      });
 			    
-	    
-      osm.addTo(mapa);
+	osm.addTo(mapa);
 	    
       // retorna un color con base en la cantidad de especies
       function color(d) {
@@ -110,10 +111,7 @@
 	"Mapbox": mbox   
       };
 	  
-      var baseLayers =	{
-	"MapBox": mbox
-      };    
-	    
+       	    
       var overlays = {
 	"Riqueza de especies": riqueza,
 	"Registros de presencia": registrosPresencia
