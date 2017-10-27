@@ -30,11 +30,11 @@
       var osm  = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
         attribution: '<a href="http://www.openstreetmap.org/">OpenStreetMap</a>'
       });
-      var mbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibXZhcmdhcyIsImEiOiJRc3ZyTmZzIn0.npefgTinHjwxhTt8fjzeIw', { attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>', id: 'mapbox.satellite', accessToken: 'pk.eyJ1IjoibXZhcmdhcyIsImEiOiJRc3ZyTmZzIn0.npefgTinHjwxhTt8fjzeIw' });
+    //  var mbox = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibXZhcmdhcyIsImEiOiJRc3ZyTmZzIn0.npefgTinHjwxhTt8fjzeIw', { attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>', id: 'mapbox.satellite', accessToken: 'pk.eyJ1IjoibXZhcmdhcyIsImEiOiJRc3ZyTmZzIn0.npefgTinHjwxhTt8fjzeIw' });
 	 		    
       osm.addTo(mapa);
 	    
-      // retorna un color con base en la cantidad de especies
+      // retorna un color con base en la polación de hombres
       function color(d) {
 	return d > 128000 ? '#d7191c' :
 	       d > 106000 ? '#fec980' :
@@ -47,7 +47,7 @@
       }	    
       function PoblaciónMasc(feature, layer) {
 	var popupContent = "Población Masculina: ";
-	if (feature.properties && feature.properties.spprichnes) {
+	if (feature.properties && feature.properties.POB_2000_H) {
 	  popupContent += feature.properties.POB_2000_H;
 	} else {
 	  popupContent += 0; 
@@ -85,7 +85,7 @@
 	      
 	onEachFeature: PoblaciónMasc
       })
-      población.addTo(mapa);
+      poblaciónM.addTo(mapa);
 	    
 	    
 	    
@@ -130,6 +130,7 @@
       var overlays = {
 	"Riqueza de especies": riqueza,
 	"Registros de presencia": registrosPresencia
+	"Población Masculina": poblaciónM
       };
       L.control.layers(baseLayers, overlays).addTo(mapa);
 	    
