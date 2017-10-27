@@ -39,13 +39,13 @@
 	return d > 128000 ? '#d7191c' :
 	       d > 106000 ? '#fec980' :
 	       d > 85000 ? '#c7e6db' :
-	       d > 64000 ? '#c7e6db' :
-	       d > 420000 ? '#c7e6db' :
-	       d > 21000 ? '#c7e6db' :
-	                '#2c7bb6' ;
+	       d > 64000 ? '#c6e6db' :
+	       d > 42000 ? '#c5e6db' :
+	       d > 21000 ? '#c4e6db' :
+	                   '#2c3bb6' ;
 	         
       }	    
-      function PoblaciónMasc(feature, layer) {
+      function PoblacionMasc(feature, layer) {
 	var popupContent = "Población Masculina: ";
 	if (feature.properties && feature.properties.POB_2000_H) {
 	  popupContent += feature.properties.POB_2000_H;
@@ -71,7 +71,7 @@
       //})
       //riqueza.addTo(mapa);//
 	    
-      var poblacionMasc = L.geoJson(cantonesCR2, {
+      var poblacionMasc = L.geoJson(poblacionMasc, {
         style: function (feature) {
 	  return {
 	    weight: 2,
@@ -83,9 +83,9 @@
           };
         },
 	      
-	onEachFeature: PoblaciónMasc
+	onEachFeature: PoblacionMasc
       })
-      poblaciónM.addTo(mapa);
+      poblacionM.addTo(mapa);
 	    
 	    
 	    
