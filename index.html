@@ -36,9 +36,12 @@
 	    
       // retorna un color con base en la cantidad de especies
       function color(d) {
-	return d > 60 ? '#d7191c' :
-	       d > 40 ? '#fec980' :
-	       d > 20 ? '#c7e6db' :
+	return d > 128000 ? '#d7191c' :
+	       d > 106000 ? '#fec980' :
+	       d > 85000 ? '#c7e6db' :
+	       d > 64000 ? '#c7e6db' :
+	       d > 420000 ? '#c7e6db' :
+	       d > 21000 ? '#c7e6db' :
 	                '#2c7bb6' ;
 	         
       }	    
